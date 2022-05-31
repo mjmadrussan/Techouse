@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --light-color: #F8E0D8;
+    --green-color: #289991;
+    --grey-bcg: rgba(0, 0, 0, .125);
+}
+
+footer {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.navBar-footer {
+    width: 100vw;
+    height: 5px;
+    background: linear-gradient(-45deg, #2b110a, #F8E0D8, #002735, #00A997);
+    background-size: 400% 400%;        
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+ 
+    50% {
+        background-position: 100% 50%;
+    }
+ 
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.footer-top{
+    display: flex;
+    background-color: black;
+    color: var(--light-color);
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 3vw;
+}
+
+.footer-top a {
+    text-decoration: none;
+    color: var(--light-color);
+}
+
+.footer-top ul {
+    padding: 0;
+    padding-top: 0px;
+}
+
+.footer-top li{
+    list-style: none;
+}
+
+.site-map {
+    display: none;
+}
+
+.contact-form {
+    display: none;
+}
+
+@media (min-width: 450px) {
+    .footer-top{
+        display: flex;
+        background-color: black;
+        color: var(--light-color);
+        justify-content: space-between;
+        padding-left: 5%;
+        padding-right: 5%;
+        font-size: 1vw;
+    }
+
+    .footer-top a {
+    text-decoration: none;
+    color: var(--light-color);
+    }
+
+    .footer-top ul {
+        padding: 0;
+        padding-top: 0px;
+    }
+
+    .footer-top li {
+        list-style: none;
+    }
+
+    .site-map {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-form {
+        display: block;
+        margin-top: 13px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.4;
+        color: var(--light-color);
+        text-align: left;
+        background-color: black;
+        padding-bottom: 10px;
+        width: 250px;
+    }
+
+    .form-field {
+        width: 90%;
+        border-radius: 4px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .contact-form {
+        display: block;
+        margin-top: 13px;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.4;
+        color: var(--light-color);
+        text-align: left;
+        background-color: black;
+        padding-bottom: 10px;
+        width: 300px;
+    }
+}

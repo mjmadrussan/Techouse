@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --light-color: #F8E0D8;
+    --green-color: #289991;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+main {
+    margin-top: 65px;
+    background-color: black;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.no-results-found-alert p {
+    margin: 220px 0;
+    padding: 0 60px;
+    font-size: 18px;
+    color: white;
+}
+
+article {
+    margin: 21px 6px 21px 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+    background-color: #FFF;
+    border-radius: 2%;
+    width: auto;
+    padding: 5px;
+}
+
+.image-link {
+    padding: 8px 0;
+}
+
+.image-link img {
+    width: 50%;
+}
+
+.main-article {
+    box-sizing: border-box;
+}
+
+.main-article .price {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-color: #00A997;
+    border-radius: 2%;
+}
+
+.main-article .description {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.main-article .colours {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.button-50 {
+    appearance: button;
+    background-color: var(--green-color);
+    background-image: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    width: 220px;
+    margin: 0 5px 10px 0;
+    overflow: visible;
+    padding: 7px 30px;
+    text-align: center;
+    text-transform: none;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.button-50:focus {
+    text-decoration: none;
+}
+
+.button-50:hover {
+    text-decoration: none;
+}
+
+.button-50:not([disabled]):active {
+    box-shadow: #fff 1px 1px 0 0, #000 1px 1px 0 1px;
+    transform: translate(2px, 2px);
+}
+
+.create-button {
+    display: none;
+}
+
+.show {
+    background-color: black;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+@media (min-width: 450px){
+    main {
+        margin-top: 0;
+        display: flex;
+        align-content: center;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    article {
+        height: 450px;
+        width: 300px;
+    }
+    
+    main:hover article:not(:hover){
+        filter: grayscale(100%);
+    }
+
+    main::after {
+        background-color: rgba(#000, 0.5);
+    }
+
+    article::after {
+        background-color: rgba(#000, 0);
+        transition: .3s;
+    }
+
+    .product_img{
+        height: 150px;
+        width: auto;
+    }
+}

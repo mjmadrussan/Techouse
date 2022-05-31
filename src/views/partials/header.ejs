@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="/css/header.css">
+<header>
+    <!-- Vista MOBILE -->
+    <div class="header-top">
+        <a href="/"><img src="/images/Logo-TecHouse-header-cut.png" alt="Logo TecHouse"></a>
+        <% if (locals.user && user) {   %>
+            <div class="header-botones">
+                <a href="/profile">
+                <p>
+                    Hola <%= user.first_name %>
+                </p>
+                </a>
+            </div>
+        <% } else  {  %>
+            <div class="header-botones">
+                <a href="/login">
+                    <p>
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </p>
+                </a>
+            </div>
+        <% } %>
+    </div>
+    <div class="navBar-top">
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+        
+            <ul class="menu__box">
+              <li><a class="menu__item" href="#">Experiencias</a></li>
+              <li><a class="menu__item" href="/list">Productos</a></li>
+              <li><a class="menu__item" href="#">Nosotros</a></li>
+              <li><a class="menu__item" href="#">Soporte</a></li>
+              <li><a class="menu__item" href="/">Buscar</a></li>
+              <li><a class="menu__item" href="/">Inicio</a></li>
+            </ul>
+          </div>
+        <a href="#">
+          Sobre nosotros
+        </a>
+        <a href="#">
+          Soporte
+        </a>
+    </div>
+    <!-- Vista DESKTOP -->
+    <div class="header-global-desktop">
+        <div class="top-header">
+            <div class="top-header part-1">
+              <a href="/">
+                <img src="/images/Logo-TecHouse-header.png" alt="Logo de TecHouse">
+              </a>
+            </div>
+            <div class="top-header part-2">
+              <div class="search-bar">
+                <form class="search-form" action="/search" method="GET">
+                  <input id="headerSearchBar" type="text" name="word" placeholder="Buscar..." />
+                    <button>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+              </div>
+              <div class="error-searchBar">
+                  <!-- contenido generado por validación en Front -->
+              </div>
+            </div>
+            <div class="top-header part-3">
+              <div class="link">
+                <a href="/list">
+                  Productos
+                </a>
+              </div>
+              <div class="link">
+                <a href="#">
+                  Sobre Nosotros
+                </a>
+              </div>
+              <div class="link">
+                <a href="#">
+                  Soporte
+                </a>
+              </div>
+            </div>
+            <div class="top-header part-4">
+                <% if (locals.user && user) {   %>
+                <button>
+                    <a href="/profile">
+                        Hola <%= user.first_name %>  
+                    </a>
+                </button>
+                <% } else  {  %>
+                    <button>
+                        <a href="/Login">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                    </button>
+                <% } %>
+            </div>
+            <div class="top-header part-5">
+              <a href="/cart">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </div>
+          </div>
+        <div class="separationBar">
+        </div>
+    </div>
+    <script src="/js/headerFrontValidations.js"></script>
+</header>

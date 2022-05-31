@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    ​<head>
+        <%- include ("../partials/head.ejs") %>
+        <link rel="stylesheet" href="./css/login.css">
+    </head>
+    <body>
+        <%- include("../partials/header.ejs") %>
+        <main>
+            <div class="container"> 
+                <h1>¡Hola visitante!</h1>
+                <h3 id="h3">Tienes que loguearte para comprar productos</h3>
+                <form class="form-login" action="/Login" method="POST">
+                    <div class="form-container">
+                        <label for="correo">
+                            Dirección de correo electrónico
+                        </label>
+                        <input type="email" class="form-input" id="email" placeholder="correo@correo.com" name="email" value="<%= locals.old && old.email %>" />
+                        <div class="error-message-email">
+                            <!-- contenido generado por validación en Front (login.js) -->
+                        </div>
+                    </div>
+                    <div class="form-container">
+                        <label for="contraseña">
+                            Contraseña
+                        </label>
+                        <input type="password" class="form-input" id="password" name="password" />
+                        <div class="error-message-password">
+                            <!-- contenido generado por validación en Front (login.js) -->
+                        </div>
+                        <% if (locals.errors && errors.password) { %>
+                            <p><%= errors.password.msg %></p>
+                        <% } %>
+                    </div>
+                    <div class="form-container" id="rememberMe">
+                        <input type="checkbox" name="remember_user" />
+                        <label for="remember_user">
+                            Recuerdame
+                        </label>
+                    </div>
+                    <div class="form-submit-button">
+                        <button type="submit">
+                            Iniciar Sesion
+                        </button>
+                    </div>        
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                    <a href="/signup">Si no tienes cuenta, regístrate aquí.</a>
+                </form>
+            </div>
+        </main> 
+        <%- include("../partials/footer.ejs") %>
+        <script src="/js/validations/users/login.js"></script>
+    </body>
+</html>

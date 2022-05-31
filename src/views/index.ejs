@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  ​<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a245b1184d.js" crossorigin="anonymous"></script>
+    <title>
+        <%= siteTitle %>
+    </title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/index.css">
+  </head>
+  <body>
+      <%- include("./partials/header.ejs") %>
+      <main>
+          <div class="textOverImg">
+            <h1>Tu Casa en la Nube</h1>
+          </div>
+          <div class="imgCarrousel">
+              <img src="./images/TecHouse_banner.jpeg" alt="imagen carrousel">
+          </div>
+          <div class="experiencesMain">
+              <div class="container" id="container1">
+                  <a href="/list">
+                    <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" muted loop>
+                      <source src="./videos/Home-vertvideo-camAI_web.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </a>
+                <div class="overlay">
+                  <p>
+                    Controla lo que sucede en tu casa
+                  </p>
+                </div>
+              </div>
+              <div class="container" id="container2">
+                <a href="/list">
+                  <video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" muted loop>
+                    <source src="./videos/Home-vertvideo-deteccion_web.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </a>
+                <div class="overlay">
+                  <p>
+                    Agrega seguridad a tu hogar
+                  </p>
+                </div>
+              </div>
+              <div class="container" id="container3">
+                <a href="/list"><video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" muted loop>
+                  <source src="./videos/Home-vertvideo-llegada-a-casa_web.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></a>
+                <div class="overlay">
+                  <p>Prepara la casa para tu llegada</p>
+                  </div>
+              </div>
+              <div class="container" id="container4">
+                <a href="/list"><video onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" muted loop>
+                  <source src="./videos/Home-vertvideo-luces_web.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></a>
+                <div class="overlay">
+                  <p>Crea ambientes armoniosos</p>
+                  </div>
+              </div>
+          </div>
+      </main>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>

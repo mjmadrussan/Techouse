@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ("../partials/head.ejs") %>
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/cart.css">
+    </head>
+    <body>
+        <%- include("../partials/header.ejs") %>
+        <main>
+            <div class="cart-title">
+                <p>Tu Carrito:</p>
+            </div>
+            <% if (article == "") { %>
+                <div class="cart-empty-alert">
+                    <p>Tu carrito está vacío</p>
+                    <a href="/list">Haz click aquí si quieres adquirir algún producto</a>
+                </div>
+            <% } else { %>
+                <div class="products-viewer">
+                    <% article.forEach(product => { %>
+                        <div class="product">
+                            <div class="product-info">
+                                <div class="product-info-header">
+                                    <img src="/images/Products/<%= product.sale_products.product_image %>" alt= "Foto de producto">
+                                    <div class="product-details">
+                                        <h3><%= product.sale_products.product_name %></h3>
+                                        <p>
+                                            <%= product.sale_products.product_description %>
+                                        </p>
+                                    </div>
+                                    <div class="product-trash-can">
+                                        <a href="/cart/remove/<%= product.id %>">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-pricing">
+                                <div class="unit-price">
+                                    $ <%= product.sale_products.product_price %>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div> 
+            <div class="cart-bottom">
+                <p>Sumatoria: $ <%= suma %></p>
+                <a href="/list">Haz click aquí si quieres continuar comprando</a>
+            </div>
+            <% } %>
+            <% if (article == '') { %>
+                <!-- En caso de no haber items en el carrito, no se muestran los botones -->
+            <% } else { %>
+                <div class="full-cart-options-bar">
+                    <form method="POST" action="/cart" enctype="multipart/form-data">
+                        <button class="empty-cart">
+                            <a href="/cart/empty">
+                                Limpiar Carrito <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </button>
+                        <button class="confirm-cart">
+                            <a href="/cart/checkout">
+                                Comprar Carrito <i class="fas fa-check"></i>
+                            </a>
+                        </button>
+                    </form>
+                </div>
+            <% } %>
+            <div class="safety-mentions">
+                <div class="caja-envio">
+                    <img src="https://img.icons8.com/pastel-glyph/64/000000/shipping-service--v2.png"/>
+                    <div class="caja-envio-texto">
+                        <h4>Enviamos tu compra</h4>
+                        <p>Entregas en todo el pais</p>
+                    </div>
+                    
+                </div>
+    
+                <div class="caja-pago">
+                    <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-credit-card-finance-kiranshastry-lineal-kiranshastry-1.png"/>
+                    <div class="caja-envio-texto">
+                        <h4>Paga como quieras</h4>
+                        <p>Tarjetas de crédito o efectivo</p>
+                    </div>
+                </div>
+    
+                <div class="caja-seguridad">
+                    <img src="https://img.icons8.com/windows/32/000000/security-block.png"/>
+                    <div class="caja-envio-texto">
+                        <h4>Compra con seguridad</h4>
+                        <p>Tus datos siempre protegidos</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include("../partials/footer.ejs") %>
+    </body>
+</html>

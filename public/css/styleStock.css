@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    line-height: 1.5;
+    min-height: 50vh;
+}
+
+
+/* ========================================================
+    Main
+======================================================== */
+
+main {
+    margin: auto;
+    background-color: black;
+}
+
+article {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+article h2 {
+    font-size: 1rem;
+}
+
+main .article-flex-container {
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 40px;
+    width: 80%;
+}
+
+main .formProductCreate {
+    padding: 10px 10px;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-main {
+    display: inline-block;
+}
+
+#search-box {
+    width: 100%
+}
+
+.form-container-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container, .form-container-description, .form-container-buttons  {
+    width: 100%;
+}
+
+.form-container input, textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #666;
+}
+
+
+/* ========================================================
+    Responsive - Tablet & Desktop viewport
+======================================================== */
+
+@media (min-width: 450px) {
+    
+    body {
+        background-color: black;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    article {
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    article h2 {
+        font-size: 1.4rem;
+    }
+
+    .form-container, .form-button {
+        width: 30%;
+    }
+
+    .form-button {
+        padding: 5px 15px;
+        margin: 10px 23px;
+    }
+
+    /*  */
+    .error-product-name {
+        color: red;
+    }
+
+    main .article-flex-container {
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+        width: 60%;
+        padding-left: 20px;
+    }
+}
